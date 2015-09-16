@@ -208,10 +208,10 @@ void AES_ecb_encrypt_chunk_in_out(block *in, block *out, unsigned nblks, AES_KEY
 	for (int i = blocksPipeLined; i < blocksPipeLined + remainingEncrypts; ++i){
 		out[i] = _mm_xor_si128(in[i], sched[0]);
 		for (j = 1; j < rnds; ++j)
-			for (int i = blocksPipeLined; i < blocksPipeLined + remainingEncrypts; ++i)
-				out[i] = _mm_aesenc_si128(out[i], sched[j]);
-		for (int i = blocksPipeLined; i < blocksPipeLined + remainingEncrypts; ++i)
-			out[i] = _mm_aesenclast_si128(out[i], sched[j]);
+		{
+			out[i] = _mm_aesenc_si128(out[i], sched[j]);
+		}
+		out[i] = _mm_aesenclast_si128(out[i], sched[j]);
 	}
 	
 }
