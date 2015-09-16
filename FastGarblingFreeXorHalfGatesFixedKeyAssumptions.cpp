@@ -44,7 +44,7 @@ FastGarblingFreeXorHalfGatesFixedKeyAssumptions::FastGarblingFreeXorHalfGatesFix
 void FastGarblingFreeXorHalfGatesFixedKeyAssumptions::createCircuitMemory(const char* fileName) {
 
 	//call the base class to create circuit function
-	createCircuit(fileName, true, false,false,true);
+	createCircuit(fileName, true);
 
 	//create this memory and initialize it in construction time to gain performance
 	deltaFreeXor = (block *)_aligned_malloc(sizeof(block), 16);

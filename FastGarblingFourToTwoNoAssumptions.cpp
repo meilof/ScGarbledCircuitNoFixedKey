@@ -38,13 +38,12 @@ FastGarblingFourToTwoNoAssumptions::FastGarblingFourToTwoNoAssumptions(const cha
 {
 	//create the needed memory for this circuit
 	createCircuitMemory(fileName);
-	isTwoRows = true;
 }
 
 void FastGarblingFourToTwoNoAssumptions::createCircuitMemory(const char* fileName) {
 
 	//call the base class to create circuit function
-	createCircuit(fileName, false, false,false,true);
+	createCircuit(fileName, false);
 
 
 	//create this memory and initialize it in construction time to gain performance

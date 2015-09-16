@@ -62,16 +62,12 @@ GarbledBooleanCircuit::~GarbledBooleanCircuit(void)
 
 }
 
-void GarbledBooleanCircuit::createCircuit(const char* fileName, bool isFreeXor, bool isRowReduction, bool NOTgateOptimization, bool isTwoRows){
+void GarbledBooleanCircuit::createCircuit(const char* fileName, bool isFreeXor){
 	//clock_t start, stop;
 
 
 	//start = clock();
 	this->isFreeXor = isFreeXor;
-	this->isRowReduction = isRowReduction;
-	this->NOTgateOptimization = NOTgateOptimization;
-	this->isNaive = false;
-	this->isTwoRows = isTwoRows;
 
 	//init all the variable to either null or 0 for integers.
 	lastWireIndex = 0;
@@ -157,11 +153,6 @@ int GarbledBooleanCircuit::binaryTodecimal(int n){
 	return output;
 }
 
-
-
-bool GarbledBooleanCircuit::getIsRowReduction(){
-	return isRowReduction;
-}
 
 
 int GarbledBooleanCircuit::getRowTruthTableResult(int i, int j, unsigned char truthTable){

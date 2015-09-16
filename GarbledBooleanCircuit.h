@@ -106,12 +106,6 @@ protected:
 
 	bool isFreeXor;//A flag indicating if the user wants to use the optimization of FreeXor.
 
-	bool isRowReduction;
-
-	bool isNaive;
-
-	bool isTwoRows;
-
 	int numberOfInputs;//The total number of inputs for all parties
 	int numberOfOutputs;//Number of outputs
 	int lastWireIndex;//The index of the last wire in the circuit. This determines the size of the wire array and thus should not be
@@ -186,7 +180,7 @@ public:
 	* It also allocates memory according to the circuit it creates, such as computedWires, garbledWires and so on. This
 	* is done in the construction, rather than in the relevant function to reduce the cache misses.
 	*/
-	void createCircuit(const char* fileName, bool isFreeXor, bool isRowReduction, bool NOTgateOptimization = false, bool isTwoRows = false);
+	void createCircuit(const char* fileName, bool isFreeXor);
 
 	/**
 	* This method read text file and creates an object of GarbledBooleanCircuit according to the file.
@@ -265,10 +259,7 @@ public:
 	int getNumOfXorGates() { return numOfXorGates;};
 	int getNumOfNotGates() { return numOfNotGates; };
 	int getLastWireIndex() const { return lastWireIndex; };
-	bool getIsRowReduction();
 	bool getIsFreeXor() const { return isFreeXor; };
-	bool getIsNaive() const { return isNaive; };
-	bool getIsTwoRows() const { return isTwoRows; };
 
 
 	protected:
