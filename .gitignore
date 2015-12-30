@@ -1,0 +1,16 @@
+*.suo
+*.obj
+*.log
+*.tlog
+*.*build
+*.sdf
+*.idb
+*.pdb
+*.ipch
+*.lib
+*.opensdf
+*.ipdb
+*.dll
+*.iobj
+*.pch
+
