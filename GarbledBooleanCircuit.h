@@ -298,7 +298,9 @@ public:
 		*
 		*Sets the signal of wire1 to be the complement of wire0.
 		*/
-		void setSignalBit(block *wire0, block *wire1){ *((unsigned char *)(wire1)) = *((unsigned char *)(wire0)) ^ 1; };
+		void setSignalBit(block *wire0, block *wire1){
+            *((unsigned char *)(wire1)) = *((unsigned char *)(wire1)) & 0xFE ^ (*((unsigned char *)(wire0)) & 0x01);
+        };
 
 		
 		/*

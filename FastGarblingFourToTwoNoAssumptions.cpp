@@ -352,7 +352,7 @@ void FastGarblingFourToTwoNoAssumptions::initAesEncryptionsAndInputKeys(block* e
 	for (int i = 0; i<numberOfInputs; i++){
 
 		emptyBothInputKeys[2 * i] = encryptedChunkKeys[2 * i];
-		emptyBothInputKeys[2 * i] = encryptedChunkKeys[2 * i + 1];
+		emptyBothInputKeys[2 * i + 1] = encryptedChunkKeys[2 * i + 1];
 
 		setSignalBit(&(emptyBothInputKeys[2 * i]), &(emptyBothInputKeys[2 * i + 1]));
 
